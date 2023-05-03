@@ -33,3 +33,13 @@ INSERT INTO owners(full_name, age) VALUES('Jodie Whittaker', 38);
 /* insert into species */
 INSERT INTO SPECIES(name) VALUES('Pokemon');
 INSERT INTO SPECIES(name) VALUES('Digimon');
+
+UPDATE animals SET species_id = 2 WHERE name LIKE '%mon';
+UPDATE animals SET species_id = 1 WHERE species_id is null;
+
+/* add owners to animals table */
+UPDATE animals SET owner_id = 1 WHERE name = 'Agumon';
+UPDATE animals SET owner_id = 2 WHERE name IN ('Gabumon','Pikachu');
+UPDATE animals SET owner_id = 3 WHERE name IN ('Devimon','Plantmon');
+UPDATE animals SET owner_id = 4 WHERE name IN ('Charmander','Squirtle', 'Blossom');
+UPDATE animals SET owner_id = 5 WHERE name IN ('Angemon','Boarmon');
