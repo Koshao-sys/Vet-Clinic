@@ -11,24 +11,14 @@ CREATE TABLE animals (
 
 ALTER TABLE animals ADD species VARCHAR(250);
 
-CREATE SEQUENCE public.owners_id_seq
-    INCREMENT 1
-    START 1
-    MINVALUE 1;
-
 CREATE TABLE owners(
-	id INTEGER DEFAULT nextval('owners_id_seq'::regclass) PRIMARY KEY,
+	id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	full_name VARCHAR(250),
 	age INT
 );
 
-CREATE SEQUENCE public.species_id_seq
-    INCREMENT 1
-    START 1
-    MINVALUE 1;
-
 CREATE TABLE species(
-	id INTEGER DEFAULT nextval('species_id_seq'::regclass) PRIMARY KEY,
+	id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	name VARCHAR(250)
 );
 
